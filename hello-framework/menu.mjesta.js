@@ -92,7 +92,9 @@ export function generirajMjestaOdObiteljiSVE(obitelji, rod = "Bosna") {
     { label: "Migracije", dir: "mjesto_migracije" },
     { label: "Zapisi", dir: "mjesto_zapisi" },
     { label: "Obitelji", dir: "mjesto_obitelji" },
-    { label: "Župe", dir: "mjesto_zupe" }
+    { label: "Župe", dir: "mjesto_zupe" },
+    { label: "Događaji", dir: "mjesto_dogadjaji" },
+    { label: "Groblje", dir: "mjesto_groblje" }
   ];
 
   // Generiraj sve stranice
