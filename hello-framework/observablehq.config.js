@@ -102,7 +102,9 @@ export const dynamicPaths = () => {
           `/pages/ENTITET/mjesto_migracije/${encodeURIComponent(o.MJESTO)}`,
           `/pages/ENTITET/mjesto_obitelji/${encodeURIComponent(o.MJESTO)}`,
           `/pages/ENTITET/mjesto_stablo/${encodeURIComponent(o.MJESTO)}`,
-          `/pages/ENTITET/mjesto_zapisi/${encodeURIComponent(o.MJESTO)}`
+          `/pages/ENTITET/mjesto_zapisi/${encodeURIComponent(o.MJESTO)}`,
+          `/pages/ENTITET/mjesto_dogadjaji/${encodeURIComponent(o.MJESTO)}`,
+          `/pages/ENTITET/mjesto_groblje/${encodeURIComponent(o.MJESTO)}`
         ])
     )
    .concat(data.župe
