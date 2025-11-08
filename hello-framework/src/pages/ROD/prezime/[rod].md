@@ -3,7 +3,6 @@
 <div id="observablehq-prezime_plot-b9087471"></div>
 <div id="observablehq-paragraph2-b9087471"></div>
 <div id="observablehq-prezime_table-b9087471"></div>
-<div id="observablehq-mdText-b9087471"></div>
 <p>Credit: <a href="https://observablehq.com/d/3a9b8d56718102ec@427">Prezime (R) by FTM</a></p>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
@@ -16,6 +15,5 @@ new Runtime().module(define, name => {
   if (name === "prezime_plot") return new Inspector(document.querySelector("#observablehq-prezime_plot-b9087471"));
   if (name === "paragraph2") return new Inspector(document.querySelector("#observablehq-paragraph2-b9087471"));
   if (name === "prezime_table") return new Inspector(document.querySelector("#observablehq-prezime_table-b9087471"));
-  if (name === "mdText") return new Inspector(document.querySelector("#observablehq-mdText-b9087471"));
 });
 </script>
