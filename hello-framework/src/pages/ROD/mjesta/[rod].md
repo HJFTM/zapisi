@@ -4,8 +4,7 @@
 <div id="observablehq-mjesta_plot-7883c39a"></div>
 <div id="observablehq-mjesta_obitelji_text-7883c39a"></div>
 <div id="observablehq-mjesta_obitelji_table-7883c39a"></div>
-<div id="observablehq-mdText-7883c39a"></div>
-<p>Credit: <a href="https://observablehq.com/d/702564761cbe308e@417">Mjesta (R) by FTM</a></p>
+<p>Credit: <a href="https://observablehq.com/d/702564761cbe308e">Mjesta (R) by FTM</a></p>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
 <script type="module">
@@ -18,6 +17,5 @@ new Runtime().module(define, name => {
   if (name === "mjesta_plot") return new Inspector(document.querySelector("#observablehq-mjesta_plot-7883c39a"));
   if (name === "mjesta_obitelji_text") return new Inspector(document.querySelector("#observablehq-mjesta_obitelji_text-7883c39a"));
   if (name === "mjesta_obitelji_table") return new Inspector(document.querySelector("#observablehq-mjesta_obitelji_table-7883c39a"));
-  if (name === "mdText") return new Inspector(document.querySelector("#observablehq-mdText-7883c39a"));
 });
 </script>
