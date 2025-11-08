@@ -3,7 +3,7 @@
 <div id="observablehq-prezime_plot-b9087471"></div>
 <div id="observablehq-paragraph2-b9087471"></div>
 <div id="observablehq-prezime_table-b9087471"></div>
-<p>Credit: <a href="https://observablehq.com/d/3a9b8d56718102ec@427">Prezime (R) by FTM</a></p>
+<p>Credit: <a href="https://observablehq.com/d/3a9b8d56718102ec">Prezime (R) by FTM</a></p>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
 <script type="module">
