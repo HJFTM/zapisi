@@ -40,7 +40,7 @@ const payload = {
 };
 
 // 6️⃣ Zapiši u dist/
-const outDir = path.resolve("dist");
+const outDir = path.resolve("dist/pages");
 await fs.mkdir(outDir, { recursive: true });
 
 const outPath = path.join(outDir, outFile);
