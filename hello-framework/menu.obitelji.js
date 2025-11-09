@@ -6,23 +6,25 @@ from "./observablehq.base.js";
 
 
 const obiteljiBH = generirajObiteljiPoMjestu(data.obitelj, "Bosna");
-const obiteljiST = generirajObiteljiPoMjestu(data.obitelj, "Stupnik");
-const obiteljiDU = generirajObiteljiPoMjestu(data.obitelj, "Dubrovnik");
+// const obiteljiST = generirajObiteljiPoMjestu(data.obitelj, "Stupnik");
+// const obiteljiDU = generirajObiteljiPoMjestu(data.obitelj, "Dubrovnik");
 
 const obiteljiGEOBH = generirajObiteljiGEOpoMjestu(data.obitelj, "Bosna");
-const obiteljiGEOST = generirajObiteljiGEOpoMjestu(data.obitelj, "Stupnik");
-const obiteljiGEODU = generirajObiteljiGEOpoMjestu(data.obitelj, "Dubrovnik");
+// const obiteljiGEOST = generirajObiteljiGEOpoMjestu(data.obitelj, "Stupnik");
+// const obiteljiGEODU = generirajObiteljiGEOpoMjestu(data.obitelj, "Dubrovnik");
 
 const obiteljiZapisBH = generirajObiteljiZapis(data.obitelj, "Bosna");
-const obiteljiZapisST = generirajObiteljiZapis(data.obitelj, "Stupnik");
-const obiteljiZapisDU = generirajObiteljiZapis(data.obitelj, "Dubrovnik");
+// const obiteljiZapisST = generirajObiteljiZapis(data.obitelj, "Stupnik");
+// const obiteljiZapisDU = generirajObiteljiZapis(data.obitelj, "Dubrovnik");
 
 const obiteljiStabloBH = generirajObiteljiStablo(data.obitelj, "Bosna");
-const obiteljiStabloST = generirajObiteljiStablo(data.obitelj, "Stupnik");
-const obiteljiStabloDU = generirajObiteljiStablo(data.obitelj, "Dubrovnik");
+// const obiteljiStabloST = generirajObiteljiStablo(data.obitelj, "Stupnik");
+// const obiteljiStabloDU = generirajObiteljiStablo(data.obitelj, "Dubrovnik");
 
 export const obiteljiPages = [
-  ...obiteljiBH, ...obiteljiST, ...obiteljiDU,
+  ...obiteljiBH, 
+  // ...obiteljiST, 
+  // ...obiteljiDU,
  
   {
     name: "------",
