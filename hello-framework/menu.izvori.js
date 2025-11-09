@@ -4,13 +4,13 @@ console.log("menu.izvor.js - Array.isArray(data):", Array.isArray(data));
 
 // Generiraj Zupe po Drzavama
 const zupeBH = generirajZupePoRodovima(data, "Bosna");
-const zupeAU = generirajZupePoRodovima(data, "Austrougarska");
-const zupeDU = generirajZupePoRodovima(data, "Dubrovačka Republika");
+// const zupeAU = generirajZupePoRodovima(data, "Austrougarska");
+// const zupeDU = generirajZupePoRodovima(data, "Dubrovačka Republika");
 
 // ➕ Generiranje matica za sve rodove
 const maticeBH = generirajMaticePoZupi(data, "Bosna");
-const maticeST = generirajMaticePoZupi(data, "Stupnik");
-const maticeDU = generirajMaticePoZupi(data, "Dubrovnik");
+// const maticeST = generirajMaticePoZupi(data, "Stupnik");
+// const maticeDU = generirajMaticePoZupi(data, "Dubrovnik");
 const matice_komusina = maticeBH.find(m => m.name ==  "Komušina");
 const matice_sivsa = maticeBH.find(m => m.name ==  "Sivša");
 const matice_pecnik = maticeBH.find(m => m.name ==  "Pećnik");
@@ -40,8 +40,8 @@ export const izvoriPages = [
   },       
 
   zupeBH, 
-  zupeAU, 
-  zupeDU,
+ // zupeAU, 
+ // zupeDU,
 ];
 
 
