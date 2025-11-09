@@ -29,7 +29,10 @@ jobs:
 
       - name: Build site
         run: npm run build
-
+      
+      - name: Export menu.json
+        run: node scripts/export-menu-json.mjs
+        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
