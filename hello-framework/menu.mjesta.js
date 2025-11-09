@@ -41,7 +41,9 @@ export const mjestaMenu = [
 ];
 
 export const mjestaPages = [
-  ...mjestaBH, ...mjestaST, ...mjestaDU,
+  ...mjestaBH, 
+  // ...mjestaST, 
+  // ...mjestaDU,
 
   
   {
