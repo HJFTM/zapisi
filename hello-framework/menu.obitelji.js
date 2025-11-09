@@ -33,10 +33,14 @@ export const obiteljiPages = [
 ];
 
 export const obiteljiPagesAll = [
-  ...obiteljiBH, ...obiteljiST, ...obiteljiDU,
-  ...obiteljiGEOBH, ...obiteljiGEOST, ...obiteljiGEODU,
-  ...obiteljiStabloBH, ...obiteljiStabloST, ...obiteljiStabloDU,
-  ...obiteljiZapisBH, ...obiteljiZapisST, ...obiteljiZapisDU
+  ...obiteljiBH, 
+  // ...obiteljiST, ...obiteljiDU,
+  ...obiteljiGEOBH, 
+  // ...obiteljiGEOST, ...obiteljiGEODU,
+  ...obiteljiStabloBH, 
+  // ...obiteljiStabloST, ...obiteljiStabloDU,
+  ...obiteljiZapisBH, 
+  //...obiteljiZapisST, ...obiteljiZapisDU
 ];
 
 export function generirajObiteljiPoMjestu(data, rod = "Bosna") {
