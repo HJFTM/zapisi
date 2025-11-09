@@ -2,14 +2,14 @@ import {data} from "./observablehq.base.js";
 
 // ➕ Generiranje matica za sve rodove
 const maticeBH = generirajMaticePoZupi(data, "Bosna");
-const maticeST = generirajMaticePoZupi(data, "Stupnik");
-const maticeDU = generirajMaticePoZupi(data, "Dubrovnik");
+//const maticeST = generirajMaticePoZupi(data, "Stupnik");
+//const maticeDU = generirajMaticePoZupi(data, "Dubrovnik");
 
 // 📦 Export struktura izvora, uključujući matice
 export const zapisiPages = [
   ...maticeBH,
-  ...maticeST,
-  ...maticeDU
+  //...maticeST,
+  //...maticeDU
 ];
 
 // 🔁 Funkcija za generiranje matica po župi
