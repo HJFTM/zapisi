@@ -34,12 +34,14 @@ export function getRodEntitetiIzvoriPages(rod, obitelji) {
         { name: "  Pismo / Jezik", path: `/pages/ROD/pismo/${encodeURIComponent(rod)}`},
       ]
     },
+   /*
     {
       name: "----------",
       pages: [
         { name: "Sadržaj",        path: "/pages/KONCEPT/Navigacija" },
       ]
     }
+    */
   ];
 }
 
