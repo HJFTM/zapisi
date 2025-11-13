@@ -131,5 +131,6 @@ export default {
   entryPoints,
   dynamicPaths,
   head: '<link rel="icon" href="observable.png" type="image/png" sizes="32x32">',
-  root: "src"
+  root: "src",
+  '<small>© 2025 Built by Ivan Jularić</small>'
 };
