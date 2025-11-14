@@ -6,7 +6,7 @@ const mjestaBH = generirajMjestaOdObiteljiSVE(data.obitelj, "Bosna");
 // const mjestaST = generirajMjestaOdObiteljiSVE(data.obitelj, "Stupnik");
 // const mjestaDU = generirajMjestaOdObiteljiSVE(data.obitelj, "Dubrovnik");
 
-const menuBH = generirajMjestaOdObitelji(data.obitelj, "Bosna");
+const menuBH = generirajMjestaOdObiteljiSVE(data.obitelj, "Bosna");
 // const menuST = generirajMjestaOdObitelji(data.obitelj, "Stupnik");
 // const menuDU = generirajMjestaOdObitelji(data.obitelj, "Dubrovnik");
 
