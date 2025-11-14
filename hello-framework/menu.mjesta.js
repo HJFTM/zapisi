@@ -55,33 +55,49 @@ export const mjestaPages = [
 ];
 
 export function generirajMjestaOdObiteljiSVE(obitelji, rod = "Bosna") {
-  const obitelj_m = obitelji.filter(o => o.TIP === "M" && o.ROD === rod && o.OBITELJ);
+  // 1) filtriraj obitelji (samo muške loze, isti kao prije)
+  const obitelj_m = obitelji.filter(
+    o => o.TIP === "M" && o.ROD === rod && o.OBITELJ
+  );
+
   const mjestaSet = new Set();
 
-  // Skupi jedinstvena mjesta iz glavnog mjesta i migracija
+  // 2) skupi jedinstvena mjesta iz glavnog mjesta i migracija
   for (const o of obitelj_m) {
     if (o.MJESTO) mjestaSet.add(o.MJESTO.trim());
 
-    const migracije = (o.MIGRACIJA || "").split(/[,;]/).map(s => s.trim());
+    const migracije = (o.MIGRACIJA || "")
+      .split(/[,;]/)
+      .map(s => s.trim())
+      .filter(Boolean);
+
     for (const migracija of migracije) {
-      if (migracija) mjestaSet.add(migracija);
+      mjestaSet.add(migracija);
     }
   }
 
-  // Nađi najstariju godinu za svako mjesto
+  // 3) nađi najstariju godinu za svako mjesto
   const mjestaMap = new Map();
 
   for (const mjesto of mjestaSet) {
     let najstarijaGodina = null;
 
     for (const o of obitelj_m) {
-      const godina = parseInt(o.GODINA);
+      const godina = parseInt(o.GODINA, 10);
       if (!isFinite(godina)) continue;
 
-      const migracije = (o.MIGRACIJA || "").split(/[,;]/).map(s => s.trim());
-      const mjestoMatch = (o.MJESTO && o.MJESTO.trim() === mjesto) || migracije.includes(mjesto);
+      const migracije = (o.MIGRACIJA || "")
+        .split(/[,;]/)
+        .map(s => s.trim())
+        .filter(Boolean);
 
-      if (mjestoMatch && (najstarijaGodina == null || godina < najstarijaGodina)) {
+      const mjestoMatch =
+        (o.MJESTO && o.MJESTO.trim() === mjesto) || migracije.includes(mjesto);
+
+      if (
+        mjestoMatch &&
+        (najstarijaGodina == null || godina < najstarijaGodina)
+      ) {
         najstarijaGodina = godina;
       }
     }
@@ -91,9 +107,10 @@ export function generirajMjestaOdObiteljiSVE(obitelji, rod = "Bosna") {
     }
   }
 
-  // Definiraj stranice po temama
+  // 4) definiraj podstranice (kategorije) za svako mjesto
   const kategorije = [
     { label: "Migracije", dir: "mjesto_migracije" },
+    { label: "Stablo", dir: "mjesto_stablo" },
     { label: "Zapisi", dir: "mjesto_zapisi" },
     { label: "Obitelji", dir: "mjesto_obitelji" },
     { label: "Župe", dir: "mjesto_zupe" },
@@ -101,17 +118,31 @@ export function generirajMjestaOdObiteljiSVE(obitelji, rod = "Bosna") {
     { label: "Groblje", dir: "mjesto_groblje" }
   ];
 
-  // Generiraj sve stranice
-  const stranice = [];
+  // 5) generiraj strukturu menija: jedno mjesto -> više podstranica
+  const mjesta = Array.from(mjestaMap.entries())
+    // sort po najstarijoj godini, pa po nazivu mjesta
+    .sort((a, b) => {
+      if (a[1] !== b[1]) return a[1] - b[1];
+      return a[0].localeCompare(b[0], "hr");
+    })
+    .map(([mjesto, godina]) => {
+      const nazivMjesta = `${godina}. ${mjesto}`;
 
-  for (const [mjesto, godina] of Array.from(mjestaMap.entries()).sort((a, b) => a[1] - b[1])) {
-    for (const { label, dir } of kategorije) {
-      stranice.push({
-        name: `${godina}. ${mjesto}`,
+      const pages = kategorije.map(({ label, dir }) => ({
+        name: label,
         path: `/pages/ENTITET/${dir}/${encodeURIComponent(mjesto)}`
-      });
-    }
-  }
+      }));
+
+      return {
+        name: nazivMjesta,
+        // opcionalno: glavna stranica mjesta – npr. prva kategorija
+        path: pages[0]?.path,
+        pages
+      };
+    });
+
+  return mjesta;
+}
 
   return stranice;
 }
