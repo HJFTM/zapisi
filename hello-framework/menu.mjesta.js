@@ -109,6 +109,7 @@ export function generirajMjestaOdObiteljiSVE(obitelji, rod = "Bosna") {
 
   // 4) definiraj podstranice (kategorije) za svako mjesto
   const kategorije = [
+    { label: "Mjesto", dir: "mjesto" },
     { label: "Migracije", dir: "mjesto_migracije" },
     { label: "Stablo", dir: "mjesto_stablo" },
     { label: "Zapisi", dir: "mjesto_zapisi" },
