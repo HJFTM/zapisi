@@ -26,12 +26,12 @@ export const obiteljiPages = [
   // ...obiteljiST, 
   // ...obiteljiDU,
  
-  {
-    name: "------",
-    pages: [
-      { name: "Sadržaj", path: "/pages/KONCEPT/Navigacija" }
-    ]
-  }
+ // {
+ //   name: "------",
+ //   pages: [
+ //     { name: "Sadržaj", path: "/pages/KONCEPT/Navigacija" }
+ //   ]
+ // }
 ];
 
 export const obiteljiPagesAll = [
