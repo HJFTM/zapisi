@@ -143,6 +143,3 @@ export function generirajMjestaOdObiteljiSVE(obitelji, rod = "Bosna") {
 
   return mjesta;
 }
-
-  return stranice;
-}
