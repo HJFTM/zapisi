@@ -55,49 +55,36 @@ export const mjestaPages = [
 ];
 
 export function generirajMjestaOdObiteljiSVE(obitelji, rod = "Bosna") {
-  // 1) filtriraj obitelji (samo muške loze, isti kao prije)
+  // 1) filtriraj obitelji (samo muške loze, isto kao prije)
   const obitelj_m = obitelji.filter(
     o => o.TIP === "M" && o.ROD === rod && o.OBITELJ
   );
 
   const mjestaSet = new Set();
 
-  // 2) skupi jedinstvena mjesta iz glavnog mjesta i migracija
+  // 2) skupi jedinstvena mjesta SAMO iz o.MJESTO (MIGRACIJA se ignorira)
   for (const o of obitelj_m) {
-    if (o.MJESTO) mjestaSet.add(o.MJESTO.trim());
-
-    const migracije = (o.MIGRACIJA || "")
-      .split(/[,;]/)
-      .map(s => s.trim())
-      .filter(Boolean);
-
-    for (const migracija of migracije) {
-      mjestaSet.add(migracija);
+    if (o.MJESTO && o.MJESTO.trim()) {
+      mjestaSet.add(o.MJESTO.trim());
     }
   }
 
-  // 3) nađi najstariju godinu za svako mjesto
+  // 3) nađi najstariju godinu za svako mjesto (opet, samo po o.MJESTO)
   const mjestaMap = new Map();
 
   for (const mjesto of mjestaSet) {
     let najstarijaGodina = null;
 
     for (const o of obitelj_m) {
+      if (!o.MJESTO) continue;
+
+      const mjestoObitelji = o.MJESTO.trim();
+      if (mjestoObitelji !== mjesto) continue;
+
       const godina = parseInt(o.GODINA, 10);
       if (!isFinite(godina)) continue;
 
-      const migracije = (o.MIGRACIJA || "")
-        .split(/[,;]/)
-        .map(s => s.trim())
-        .filter(Boolean);
-
-      const mjestoMatch =
-        (o.MJESTO && o.MJESTO.trim() === mjesto) || migracije.includes(mjesto);
-
-      if (
-        mjestoMatch &&
-        (najstarijaGodina == null || godina < najstarijaGodina)
-      ) {
+      if (najstarijaGodina == null || godina < najstarijaGodina) {
         najstarijaGodina = godina;
       }
     }
@@ -136,8 +123,7 @@ export function generirajMjestaOdObiteljiSVE(obitelji, rod = "Bosna") {
 
       return {
         name: nazivMjesta,
-        // opcionalno: glavna stranica mjesta – npr. prva kategorija
-        path: pages[0]?.path,
+        path: pages[0]?.path, // glavna stranica mjesta – npr. prva kategorija
         pages
       };
     });
