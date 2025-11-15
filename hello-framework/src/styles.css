@@ -1,0 +1,28 @@
+/* GLOBALNA “BROWN” TEMA */
+
+/* LIGHT MODE – svijetli “golden-brown” akcent */
+:root {
+  /* glavna accent boja za cijeli site */
+  --theme-accent: #c38b5f; /* topli, svijetli brown */
+
+  /* mekša varijanta za pozadine, badgeve itd. (opcionalno) */
+  --theme-accent-soft: color-mix(in srgb, #c38b5f 16%, #f9fafb);
+
+  /* linkovi */
+  --theme-link-color: var(--theme-accent);
+  --theme-link-hover-color: color-mix(in srgb, var(--theme-accent) 80%, white);
+
+  /* ako želiš i selection u brownu (nije obavezno):
+  --theme-selection-background: color-mix(in srgb, #c38b5f 40%, #fefce8);
+  */
+}
+
+/* DARK MODE – svjetliji brown da se lijepo vidi na tamnoj pozadini */
+:root[data-theme="dark"] {
+  --theme-accent: #e3b27a; /* malo svjetliji brown za dark */
+
+  --theme-accent-soft: color-mix(in srgb, #e3b27a 18%, #020617);
+
+  --theme-link-color: var(--theme-accent);
+  --theme-link-hover-color: color-mix(in srgb, var(--theme-accent) 85%, white);
+}
