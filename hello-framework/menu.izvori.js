@@ -17,6 +17,7 @@ const matice_pecnik = maticeBH.find(m => m.name ==  "Pećnik");
 
 // 📦 Export struktura izvora, uključujući matice
 export const izvoriPages = [
+  /*
   {
     name: "Izvori",
     pages: [
@@ -38,7 +39,7 @@ export const izvoriPages = [
       { name: "Stanovnici",     path: "/pages/KONCEPT/Popis_stanovnika_K" }
     ]
   },       
-
+*/
   zupeBH, 
  // zupeAU, 
  // zupeDU,
