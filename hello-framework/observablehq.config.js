@@ -7,10 +7,6 @@ import { mjestaPages, mjestaMenu } from "./menu.mjesta.js";
 import { zapisiPages } from "./menu.zapisi.js";
 import { izvoriPages } from "./menu.izvori.js";
 
-console.log("hello-framework/observablehq.config.js - typeof data:", typeof data);
-console.log("hello-framework/observablehq.config.js - Array.isArray(data):", Array.isArray(data));
-console.log("hello-framework/observablehq.config.js - data.obitelji:", data.obitelj.length);
-
 let pages;
 
 pages = uvodPages;
