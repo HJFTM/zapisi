@@ -132,6 +132,6 @@ export default {
   dynamicPaths,
   head: '<link rel="icon" href="observable.png" type="image/png" sizes="32x32">',
   root: "src",
-  style: "styles.css", 
+  //style: "styles.css", 
   footer: '<small>© 2025 Built by Ivan Jularić</small>'
 };
