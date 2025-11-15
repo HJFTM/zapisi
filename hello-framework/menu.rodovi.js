@@ -19,10 +19,10 @@ export function getRodEntitetiIzvoriPages(rod, obitelji) {
         { name: "  Župe",         path: `/pages/ROD/zupe/${encodeURIComponent(rod)}`},
       ]
     },
-    {
+    /* {
       name: "Mjesta",
       pages: [...mjestaPages]
-    },
+    },*/
     {
       name: "Izvori",
       pages: [
