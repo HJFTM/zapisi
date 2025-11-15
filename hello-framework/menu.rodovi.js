@@ -33,11 +33,6 @@ export function getRodEntitetiIzvoriPages(rod, obitelji) {
         { name: "  Katastar",      path: `/pages/ROD/katastar/${encodeURIComponent(rod)}`},
         { name: "  Pismo / Jezik", path: `/pages/ROD/pismo/${encodeURIComponent(rod)}`},
       ]
-    },
-   
-    {
-      name: "Mjesta",
-      path: "https://hjftm.github.io/obitelji },
     }
    
   ];
